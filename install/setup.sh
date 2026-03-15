@@ -106,8 +106,8 @@ while IFS= read -r package; do
         continue
     fi
 
-    # Verify the package exists in the repository
-    if ! apt-cache show "$package" >/dev/null 2>&1; then
+        # Check if package exists in repository
+    if ! apt-cache policy "$package" | grep -q Candidate; then
         echo "WARNING: Package not found in repositories: $package"
         ((missing_count++))
         continue
