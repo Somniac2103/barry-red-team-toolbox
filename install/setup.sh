@@ -2,7 +2,7 @@
 
 # Exit immediately if any command fails.
 # This prevents the script from continuing in a broken state.
-set -e
+#set -e
 
 
 # ------------------------------------------------------------
@@ -33,7 +33,7 @@ REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 PACKAGE_FILE="$REPO_ROOT/packages/packages.txt"
 
 # Workspace directory where runtime data will be stored
-WORKSPACE_DIR="$HOME/toolbox"
+WORKSPACE_DIR="/home/${SUDO_USER:-$USER}/toolbox"
 
 # Directory where setup logs will be written
 LOG_DIR="$REPO_ROOT/logs"
